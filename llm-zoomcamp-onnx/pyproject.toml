@@ -1,5 +1,5 @@
 [project]
-name = "llm-zoomcamp-2026"
+name = "llm-zoomcamp-onnx"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -8,19 +8,22 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "google-genai>=2.14.0",
-    "jupyter>=1.1.1",
     "minsearch>=0.2.0",
-    "psycopg[binary]>=3.3.5",
-    "python-dotenv>=1.2.2",
-    "requests>=2.34.2",
-    "sentence-transformers>=6.0.1",
-    "sqlitesearch>=0.3.0",
+    "numpy>=2.5.3",
+    "onnxruntime>=1.29.0",
+    "tokenizers>=0.23.2",
+    "tqdm>=4.70.0",
 ]
 
 [project.scripts]
-llm-zoomcamp-2026 = "llm_zoomcamp_2026:main"
+llm-zoomcamp-onnx = "llm_zoomcamp_onnx:main"
 
 [build-system]
 requires = ["uv_build>=0.12.0,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "huggingface-hub>=1.30.0",
+    "jupyter>=1.1.1",
+]
